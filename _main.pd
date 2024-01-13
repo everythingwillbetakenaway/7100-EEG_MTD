@@ -1,0 +1,62 @@
+#N canvas 741 325 404 295 10;
+#X obj 136 235 dac~ 27 28 29 30;
+#X text 16 15 Bela Scope;
+#X text 16 25 ==========;
+#X text 16 81 If you're running this example in the Bela IDE \, simply
+click;
+#X text 16 95 the scope icon to see the signals being visualised.;
+#X text 16 43 You can log any signal to the scope by using the DAC~
+;
+#X text 16 57 outputs 27-30;
+#X text 17 117 If using the build scripts or compiled using Heavy \,
+make;
+#X text 16 146 up the scope in your browser http://192.168.7.2/scope/
+;
+#X text 17 132 sure the IDE is running ( ./ide.sh start ) and then
+bring;
+#X obj 169 370 dac~ 1 2;
+#X text 36 530 ----------------------;
+#X obj 260 189 adc~ 3 4;
+#X text 222 548 DAC 3: Analog Out 0;
+#X text 222 558 DAC 4: Analog Out 1;
+#X text 222 568 DAC 5: Analog Out 2;
+#X text 222 578 DAC 6: Analog Out 3;
+#X text 222 598 DAC 8: Analog Out 5;
+#X text 222 588 DAC 7: Analog Out 4;
+#X text 222 608 DAC 9: Analog Out 6;
+#X text 222 618 DAC 10: Analog Out 7;
+#X text 222 538 DAC 2: Audio Out R;
+#X text 222 528 DAC 1: Audio Out L;
+#X text 330 431 << Output to first analog out;
+#X text 335 274 << Use first two analog ins;
+#X text 335 310 << Analog In 0 controls frequency;
+#X text 335 349 << Analog In 1 controls amplitude;
+#X text 335 389 << Rescale output to range 0-1;
+#X obj 259 432 dac~ 3;
+#X text 221 490 ------------;
+#X text 221 482 DAC routing:;
+#X text 222 502 DAC channels 3-10 are used to address the analog inputs:
+;
+#X obj 259 351 *~ 0.4;
+#X obj 46 256 osc~ 100;
+#X obj 202 190 adc~ 1 2;
+#X obj 45 279 *~ 0.3;
+#X obj 125 424 dac~ 3 4;
+#X obj 143 267 osc~ 30;
+#X obj 280 390 +~ 0.4;
+#X obj 259 330 osc~ 40;
+#X text 339 461 -0.0003;
+#X obj 128 294 *~ 0.003;
+#X obj 196 294 *~ -0.003;
+#X connect 12 0 0 2;
+#X connect 32 0 38 0;
+#X connect 33 0 35 0;
+#X connect 34 0 0 0;
+#X connect 34 1 0 1;
+#X connect 37 0 41 0;
+#X connect 37 0 42 0;
+#X connect 38 0 28 0;
+#X connect 39 0 32 0;
+#X connect 41 0 10 1;
+#X connect 41 0 36 0;
+#X connect 42 0 10 0;
